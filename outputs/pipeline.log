@@ -1,69 +1,40 @@
-2026-07-06 11:52:23,387 [INFO] Loading dataset from: dataset\heart_disease.csv
-2026-07-06 11:52:23,407 [INFO] Initial dataset shape: (1025, 14)
-2026-07-06 11:52:23,410 [INFO] Missing values count per column:
-age         0
-sex         0
-cp          0
-trestbps    0
-chol        0
-fbs         0
-restecg     0
-thalach     0
-exang       0
-oldpeak     0
-slope       0
-ca          0
-thal        0
-target      0
-dtype: int64
-2026-07-06 11:52:23,420 [INFO] Number of duplicate rows found: 723
-2026-07-06 11:52:23,424 [INFO] Shape after removing duplicates: (302, 14)
-2026-07-06 11:52:23,428 [INFO] Class distribution in target column:
-target
-1    164
-0    138
-Name: count, dtype: int64
-2026-07-06 11:52:23,436 [INFO] Shape after One-Hot Encoding: (302, 20)
-2026-07-06 11:52:23,706 [INFO] Training set shape: (241, 19)
-2026-07-06 11:52:23,706 [INFO] Test set shape: (61, 19)
-2026-07-06 11:52:25,395 [INFO] Saved dataset_preview.png
-2026-07-06 11:52:25,505 [INFO] Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-2026-07-06 11:52:25,512 [INFO] Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-2026-07-06 11:52:25,745 [INFO] Saved class_distribution.png
-2026-07-06 11:52:26,249 [INFO] Saved correlation_heatmap.png
-2026-07-06 11:52:26,373 [INFO] Decision Tree Depth Overfitting Analysis:
-2026-07-06 11:52:26,373 [INFO] Depth  1 | Train Acc: 0.7635 | Test Acc: 0.7705
-2026-07-06 11:52:26,373 [INFO] Depth  2 | Train Acc: 0.7759 | Test Acc: 0.7213
-2026-07-06 11:52:26,373 [INFO] Depth  3 | Train Acc: 0.8465 | Test Acc: 0.7705
-2026-07-06 11:52:26,373 [INFO] Depth  4 | Train Acc: 0.8880 | Test Acc: 0.7869
-2026-07-06 11:52:26,374 [INFO] Depth  5 | Train Acc: 0.9253 | Test Acc: 0.7377
-2026-07-06 11:52:26,374 [INFO] Depth  6 | Train Acc: 0.9627 | Test Acc: 0.7705
-2026-07-06 11:52:26,374 [INFO] Depth  7 | Train Acc: 0.9917 | Test Acc: 0.6885
-2026-07-06 11:52:26,374 [INFO] Depth  8 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,374 [INFO] Depth  9 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,374 [INFO] Depth 10 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,375 [INFO] Depth 11 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,375 [INFO] Depth 12 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,375 [INFO] Depth 13 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,375 [INFO] Depth 14 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,375 [INFO] Depth 15 | Train Acc: 1.0000 | Test Acc: 0.7541
-2026-07-06 11:52:26,376 [INFO] Tuning Decision Tree via Grid Search...
-2026-07-06 11:52:31,685 [INFO] Best Decision Tree Parameters: {'criterion': 'entropy', 'max_depth': 6, 'min_samples_leaf': 6, 'min_samples_split': 2}
-2026-07-06 11:52:31,690 [INFO] Saved decision_tree.pkl to models/
-2026-07-06 11:52:33,855 [INFO] Saved decision_tree.png
-2026-07-06 11:52:33,856 [INFO] Training Random Forest Classifier...
-2026-07-06 11:52:39,740 [INFO] Best Random Forest Parameters: {'bootstrap': True, 'max_depth': 7, 'min_samples_split': 2, 'n_estimators': 150}
-2026-07-06 11:52:39,983 [INFO] Saved random_forest.pkl to models/
-2026-07-06 11:52:40,001 [INFO] === Decision Tree Evaluation ===
-2026-07-06 11:52:40,001 [INFO] Accuracy: 0.8033
-2026-07-06 11:52:40,001 [INFO] Precision: 0.8182
-2026-07-06 11:52:40,001 [INFO] Recall: 0.8182
-2026-07-06 11:52:40,002 [INFO] F1: 0.8182
-2026-07-06 11:52:40,002 [INFO] Roc_auc: 0.8377
-2026-07-06 11:52:40,013 [INFO] Confusion Matrix:
+2026-07-06 15:06:00,435 - INFO - Loading dataset from: dataset\heart.csv
+2026-07-06 15:06:00,478 - INFO - Found 723 duplicate rows. Dropping duplicates...
+2026-07-06 15:06:00,482 - INFO - Dataset shape: (302, 14)
+2026-07-06 15:06:01,724 - INFO - Saved dataset preview image.
+2026-07-06 15:06:02,038 - INFO - Saved target class distribution plot.
+2026-07-06 15:06:02,438 - INFO - Saved correlation heatmap.
+2026-07-06 15:06:02,546 - INFO - Overfitting Analysis (Decision Tree Depth):
+2026-07-06 15:06:02,546 - INFO -   Depth  1 -> Train Acc: 0.7635 | Test Acc: 0.7705
+2026-07-06 15:06:02,547 - INFO -   Depth  2 -> Train Acc: 0.7759 | Test Acc: 0.7213
+2026-07-06 15:06:02,547 - INFO -   Depth  3 -> Train Acc: 0.8465 | Test Acc: 0.7705
+2026-07-06 15:06:02,547 - INFO -   Depth  4 -> Train Acc: 0.8880 | Test Acc: 0.7869
+2026-07-06 15:06:02,547 - INFO -   Depth  5 -> Train Acc: 0.9253 | Test Acc: 0.7377
+2026-07-06 15:06:02,547 - INFO -   Depth  6 -> Train Acc: 0.9627 | Test Acc: 0.7705
+2026-07-06 15:06:02,547 - INFO -   Depth  7 -> Train Acc: 0.9917 | Test Acc: 0.6885
+2026-07-06 15:06:02,547 - INFO -   Depth  8 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,547 - INFO -   Depth  9 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,547 - INFO -   Depth 10 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO -   Depth 11 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO -   Depth 12 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO -   Depth 13 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO -   Depth 14 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO -   Depth 15 -> Train Acc: 1.0000 | Test Acc: 0.7541
+2026-07-06 15:06:02,548 - INFO - Tuning Decision Tree hyperparameters...
+2026-07-06 15:06:07,012 - INFO - Best Decision Tree params: {'criterion': 'entropy', 'max_depth': 6, 'min_samples_leaf': 6, 'min_samples_split': 2}
+2026-07-06 15:06:08,626 - INFO - Saved Decision Tree structure plot.
+2026-07-06 15:06:08,626 - INFO - Tuning Random Forest hyperparameters...
+2026-07-06 15:06:15,018 - INFO - Best Random Forest params: {'bootstrap': True, 'max_depth': 7, 'min_samples_split': 2, 'n_estimators': 150}
+2026-07-06 15:06:15,073 - INFO - --- Decision Tree Performance ---
+2026-07-06 15:06:15,073 - INFO - Accuracy: 0.8033
+2026-07-06 15:06:15,073 - INFO - Precision: 0.8182
+2026-07-06 15:06:15,073 - INFO - Recall: 0.8182
+2026-07-06 15:06:15,073 - INFO - F1: 0.8182
+2026-07-06 15:06:15,073 - INFO - Roc auc: 0.8377
+2026-07-06 15:06:15,080 - INFO - Confusion Matrix:
 [[22  6]
  [ 6 27]]
-2026-07-06 11:52:40,013 [INFO] Classification Report:
+2026-07-06 15:06:15,080 - INFO - Classification Report:
               precision    recall  f1-score   support
 
            0       0.79      0.79      0.79        28
@@ -73,16 +44,16 @@ Name: count, dtype: int64
    macro avg       0.80      0.80      0.80        61
 weighted avg       0.80      0.80      0.80        61
 
-2026-07-06 11:52:40,055 [INFO] === Random Forest Evaluation ===
-2026-07-06 11:52:40,056 [INFO] Accuracy: 0.8033
-2026-07-06 11:52:40,056 [INFO] Precision: 0.8182
-2026-07-06 11:52:40,056 [INFO] Recall: 0.8182
-2026-07-06 11:52:40,056 [INFO] F1: 0.8182
-2026-07-06 11:52:40,056 [INFO] Roc_auc: 0.8842
-2026-07-06 11:52:40,066 [INFO] Confusion Matrix:
+2026-07-06 15:06:15,106 - INFO - --- Random Forest Performance ---
+2026-07-06 15:06:15,106 - INFO - Accuracy: 0.8033
+2026-07-06 15:06:15,106 - INFO - Precision: 0.8182
+2026-07-06 15:06:15,106 - INFO - Recall: 0.8182
+2026-07-06 15:06:15,106 - INFO - F1: 0.8182
+2026-07-06 15:06:15,106 - INFO - Roc auc: 0.8842
+2026-07-06 15:06:15,114 - INFO - Confusion Matrix:
 [[22  6]
  [ 6 27]]
-2026-07-06 11:52:40,067 [INFO] Classification Report:
+2026-07-06 15:06:15,115 - INFO - Classification Report:
               precision    recall  f1-score   support
 
            0       0.79      0.79      0.79        28
@@ -92,15 +63,13 @@ weighted avg       0.80      0.80      0.80        61
    macro avg       0.80      0.80      0.80        61
 weighted avg       0.80      0.80      0.80        61
 
-2026-07-06 11:52:40,359 [INFO] Saved confusion_matrix_dt.png
-2026-07-06 11:52:40,645 [INFO] Saved confusion_matrix_rf.png
-2026-07-06 11:52:41,047 [INFO] Saved model_comparison.png
-2026-07-06 11:52:42,105 [INFO] === 5-Fold Cross Validation (Training Set) ===
-2026-07-06 11:52:42,105 [INFO] Decision Tree CV Scores: [0.65306122 0.79166667 0.79166667 0.79166667 0.70833333]
-2026-07-06 11:52:42,106 [INFO] Decision Tree CV Mean: 0.7473 (std: 0.0571)
-2026-07-06 11:52:42,106 [INFO] Random Forest CV Scores: [0.87755102 0.75       0.8125     0.91666667 0.72916667]
-2026-07-06 11:52:42,106 [INFO] Random Forest CV Mean: 0.8172 (std: 0.0719)
-2026-07-06 11:52:42,456 [INFO] Saved cross_validation_scores.png
-2026-07-06 11:52:43,184 [INFO] Saved feature_importance.png
-2026-07-06 11:52:43,208 [INFO] Saved evaluation metrics report to outputs\evaluation_metrics.txt
-2026-07-06 11:52:43,208 [INFO] Pipeline executed successfully. All models, evaluations, and figures saved.
+2026-07-06 15:06:15,356 - INFO - Saved confusion matrix: confusion_matrix_dt.png
+2026-07-06 15:06:15,605 - INFO - Saved confusion matrix: confusion_matrix_rf.png
+2026-07-06 15:06:15,938 - INFO - Saved model comparison plot.
+2026-07-06 15:06:16,970 - INFO - --- 5-Fold Cross Validation ---
+2026-07-06 15:06:16,971 - INFO - Decision Tree CV: 0.7473 (std: 0.0571)
+2026-07-06 15:06:16,971 - INFO - Random Forest CV: 0.8172 (std: 0.0719)
+2026-07-06 15:06:17,399 - INFO - Saved cross-validation score comparison plot.
+2026-07-06 15:06:18,116 - INFO - Saved feature importance comparison plot.
+2026-07-06 15:06:18,126 - INFO - Saved evaluation metrics report to outputs\evaluation_metrics.txt
+2026-07-06 15:06:18,127 - INFO - Pipeline completed successfully. All artifacts saved.
